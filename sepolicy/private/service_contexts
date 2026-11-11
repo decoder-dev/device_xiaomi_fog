@@ -1,0 +1,3 @@
+# Software face unlock
+faceunlock                                    u:object_r:faceunlock_service:s0
+faceunlockhal                                 u:object_r:faceunlock_service:s0

@@ -1,1 +1,8 @@
 get_prop(system_server, vendor_wfd_sys_debug_prop)
+
+# Software face unlock: the face HAL runs inside system_server and keeps its
+# templates in /data/vendor_de/<user>/facedata, where a vendor face HAL would.
+add_service(system_server, faceunlock_service)
+typeattribute system_server data_between_core_and_vendor_violators;
+allow system_server face_vendor_data_file:dir create_dir_perms;
+allow system_server face_vendor_data_file:file create_file_perms;

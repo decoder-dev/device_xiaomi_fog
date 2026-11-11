@@ -587,4 +587,13 @@
     <!-- Boolean indicating if restoring network selection should be skipped -->
     <!-- The restoring is handled by modem if it is true-->
     <bool name="skip_restoring_network_selection">true</bool>
+
+    <!-- Biometric sensors served through the HIDL path, "<id>:<modality>:<strength>".
+         Only the software face unlock (TYPE_FACE = 8, BIOMETRIC_WEAK = 255) goes
+         here; the fingerprint HAL is AIDL and is discovered on its own. Id 1 keeps
+         it apart from the fingerprint sensor. Without this entry FaceService only
+         sees the "virtual" face instance and blocks waiting for IVirtualHal. -->
+    <string-array name="config_biometric_sensors" translatable="false">
+        <item>1:8:255</item>
+    </string-array>
 </resources>
