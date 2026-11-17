@@ -58,9 +58,9 @@ on early-init
     chown root system /dev/kmsg
     chmod 0620 /dev/kmsg
 
-    # Workaround for cache
-    rm /data/resource-cache
-    rm /data/system/package_cache
+    # rm before /data mount is a no-op; removed
+    # rm /data/resource-cache
+    # rm /data/system/package_cache
 
 on init
     # Create cgroup mount point for memory
