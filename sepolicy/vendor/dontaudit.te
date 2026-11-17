@@ -4,8 +4,7 @@ dontaudit { fsck toolbox vdc zygote } self:capability kill;
 # We never apply OTAs when GSI is running
 dontaudit hal_bootctl_default gsi_metadata_file:dir search;
 
-# too noisy, and shouldn't even be granted by default unless necessary
-dontaudit { gmscore_app hal_camera_default flags_health_check } property_type:file r_file_perms;
+# Suppress noisy property read denials for init shell and rild
 dontaudit {
   rild
   vendor_qti_init_shell
