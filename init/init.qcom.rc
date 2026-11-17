@@ -601,7 +601,7 @@ on property:persist.vendor.mdlog.enable=true
 on property:persist.vendor.mdlog.enable=false
     start diag_mdlog_stop
 
-service qlogd /system/xbin/qlogd
+service qlogd /system/bin/qlogd
     socket qlogd stream 0662 system system
     class main
     disabled
