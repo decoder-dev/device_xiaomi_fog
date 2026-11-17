@@ -75,6 +75,7 @@
  <array name="wifi.controller.tx_levels">1 </array>
  <item name="wifi.controller.voltage">3700</item>
  <array name="wifi.batchedscan">
+  <value>.0001</value>
   <value>.001</value>
   <value>.01</value>
   <value>.1</value>
