@@ -392,6 +392,7 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PACKAGES += \
     FogFrameworksOverlay \
+    FogFrameworksOverlayIN \
     FogFrameworksOverlayIN2 \
     WindFrameworksOverlay \
     RainFrameworksOverlay \
