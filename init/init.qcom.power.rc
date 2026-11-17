@@ -50,8 +50,8 @@ on property:sys.boot_completed=1
     # Enable powersaving
     write /sys/module/lpm_levels/parameters/sleep_disabled 0
 
-    # Enable UFS powersaving
-    write /sys/devices/platform/soc/4804000.ufshc/clkgate_enable 1
+    # UFS powersaving not applicable (eMMC device)
+    # write /sys/devices/platform/soc/4804000.ufshc/clkgate_enable 1
     
     # Setup final cpu.uclamp.min
     write /dev/cpuctl/top-app/cpu.uclamp.min 0.00
@@ -75,9 +75,9 @@ on property:sys.boot_completed=1
     write /dev/cpuctl/rt/cpu.shares 20480
     write /dev/cpuctl/top-app/cpu.shares 20480
 
-    # Runtime fs tuning
-    write /sys/block/sda/queue/nr_requests 128
-    write /sys/block/sda/queue/iostats 1
+    # Runtime fs tuning (eMMC)
+    write /sys/block/mmcblk0/queue/nr_requests 128
+    write /sys/block/mmcblk0/queue/iostats 1
 
     # Setup runtime blkio
     # value for group_idle is us
@@ -94,19 +94,18 @@ on property:sys.boot_completed=1
     write /dev/cpuset/restricted/cpus 0-3
 
 on early-init
-    # Disable UFS clock scaling
-    write /sys/bus/platform/devices/4804000.ufshc/clkscale_enable 0
+    # UFS clock scaling not applicable (eMMC device)
+    # write /sys/bus/platform/devices/4804000.ufshc/clkscale_enable 0
 
 on init
     # Setup permission for Power HAL
     chown system system /dev/cpu_dma_latency
     chmod 0664 /dev/cpu_dma_latency
 
-    # Boot time fs tuning
-    write /sys/block/sda/queue/iostats 0
-    write /sys/block/sda/queue/scheduler cfq
-    write /sys/block/sda/queue/iosched/slice_idle 0
-    write /sys/block/sda/queue/nr_requests 256
+    # Boot time fs tuning (eMMC)
+    write /sys/block/mmcblk0/queue/iostats 0
+    write /sys/block/mmcblk0/queue/scheduler none
+    write /sys/block/mmcblk0/queue/nr_requests 256
 
     # Boot time uclamp tuning
     write /dev/cpuctl/top-app/cpu.uclamp.min 15.90
@@ -117,8 +116,8 @@ on init
     # RT uclamp setting
     write /proc/sys/kernel/sched_util_clamp_min_rt_default 0
 
-    # Disable UFS powersaving
-    write /sys/devices/platform/soc/${ro.boot.bootdevice}/clkgate_enable 0
+    # UFS powersaving not applicable (eMMC device)
+    # write /sys/devices/platform/soc/${ro.boot.bootdevice}/clkgate_enable 0
 
     # Disable powersaving
     write /sys/module/lpm_levels/parameters/sleep_disabled 1
