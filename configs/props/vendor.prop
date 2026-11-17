@@ -226,7 +226,7 @@ persist.vendor.radio.vdp_on_ims_cap=1
 vendor.rild.libpath=/vendor/lib64/libril-qc-hal-qmi.so
 
 # Sensors
-persist.vendor.sensors.debug.ssc_qmi_debug=true
+persist.vendor.sensors.debug.ssc_qmi_debug=false
 persist.vendor.sensors.enable.bypass_worker=true
 persist.vendor.sensors.enable.rt_task=false
 persist.vendor.sensors.hal_trigger_ssr=false
