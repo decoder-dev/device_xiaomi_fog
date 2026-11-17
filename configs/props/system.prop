@@ -2,8 +2,6 @@
 persist.bluetooth.disableabsvol=true
 persist.sys.btstack.absvolfeature=false
 persist.vendor.bt.a2dp.absvolfeature=false
-vendor.bluetooth.soc=cherokee
-
 # Blur
 ro.launcher.blur.appLaunch=0
 
@@ -35,12 +33,6 @@ debug.hwui.renderer=skiagl
 debug.hwui.skia_tracing_enabled=false
 debug.hwui.skia_use_perfetto_track_events=false
 debug.hwui.trace_gpu_resources=false
-
-# Iorapd
-ro.iorapd.enable=false
-iorapd.perfetto.enable=false
-iorapd.readahead.enable=false
-persist.device_config.runtime_native_boot.iorap_readahead_enable=false
 
 # Media
 debug.stagefright.ccodec=1
