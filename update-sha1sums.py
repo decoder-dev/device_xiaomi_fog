@@ -40,6 +40,7 @@ def cleanup():
 
 
 def update():
+    global needSHA1
     for index, line in enumerate(lines):
         # Skip empty lines
         if len(line) == 0:
@@ -58,7 +59,12 @@ def update():
             if filePath[0] == '-':
                 filePath = filePath[1:]
 
-            with open(os.path.join(vendorPath, filePath), 'rb') as f:
+            fileFull = os.path.join(vendorPath, filePath)
+            if not os.path.isfile(fileFull):
+                print('Warning: %s not found, skipping SHA1' % filePath)
+                continue
+
+            with open(fileFull, 'rb') as f:
                 hash = sha1(f.read()).hexdigest()
 
             lines[index] = '%s|%s' % (line, hash)
