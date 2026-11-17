@@ -28,8 +28,8 @@
     <array name="cpu.core_speeds.cluster1">
         <value>300000</value>
         <value>806400</value>
-        <value>105600</value>
-        <value>134400</value>
+        <value>1056000</value>
+        <value>1344000</value>
         <value>1766400</value>
         <value>2208000</value>
         <value>2400000</value>
