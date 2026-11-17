@@ -140,8 +140,8 @@ on init
     chown system system /dev/cpuset/camera-daemon-dedicated/tasks
     chmod 0664 /dev/cpuset/camera-daemon-dedicated/tasks
 
-    # Fix ECC Crash
-    write /sys/module/lpm_levels/system/pwr/pwr-l2-gdhs/idle_enabled N
-    write /sys/module/lpm_levels/system/perf/perf-l2-gdhs/idle_enabled N
-    write /sys/module/lpm_levels/system/pwr/pwr-l2-gdhs/suspend_enabled N
-    write /sys/module/lpm_levels/system/perf/perf-l2-gdhs/suspend_enabled N
+    # Dead LPM paths from another SoC (not applicable to SM6225)
+    # write /sys/module/lpm_levels/system/pwr/pwr-l2-gdhs/idle_enabled N
+    # write /sys/module/lpm_levels/system/perf/perf-l2-gdhs/idle_enabled N
+    # write /sys/module/lpm_levels/system/pwr/pwr-l2-gdhs/suspend_enabled N
+    # write /sys/module/lpm_levels/system/perf/perf-l2-gdhs/suspend_enabled N
