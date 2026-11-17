@@ -104,12 +104,9 @@ BOARD_KERNEL_CMDLINE += \
     androidboot.memcg=1 \
     androidboot.usbcontroller=4e00000.dwc3 \
     loop.max_part=7 \
-    lpm_levels.sleep_disabled=1 \
     msm_rtb.filter=0x237 \
     service_locator.enable=1 \
-    swiotlb=2048 \
-    kpti=off \
-    kasan=off
+    swiotlb=2048
 
 TARGET_NO_KERNEL_OVERRIDE := true
 TARGET_KERNEL_SOURCE := $(KERNEL_PATH)/kernel-headers
