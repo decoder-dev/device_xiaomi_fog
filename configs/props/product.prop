@@ -47,3 +47,8 @@ persist.vendor.qti.telephony.vt_cam_interface=2
 ro.sf.blurs_are_expensive=1
 ro.surface_flinger.supports_background_blur=0
 
+# Battery Saving
+ro.vold.umsdirtyratio=20 
+ro.ril.disable.power.collapse=0 
+power.saving.mode=1
+pm.sleep_mode=1
